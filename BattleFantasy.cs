@@ -106,8 +106,8 @@ public class Jeu
         char tmp;
 
         // Msg alerte / info
-        if (msg != "")
-            Console.WriteLine("Info : " + msg);
+        if (this.msg != "")
+            Console.WriteLine("Info : " + this.msg);
 
         // Statut du heros
         Console.WriteLine($"PV : {unHeros.PV} / MP : {unHeros.MP}");
@@ -153,6 +153,10 @@ public class Jeu
     public void attaqueZone(int arPosX, int arPosY)
     {
         Monstre unMonstre;
+
+        // Easter egg
+        if (arPosX == -1 && arPosY == -1)
+            this.msg = "@Fawsoft company";
 
         if (arPosX >= 0 && arPosX <= 9 && arPosY >= 0 && arPosY <= 9)
         {
